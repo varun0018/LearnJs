@@ -1,0 +1,310 @@
+ output statements
+
+fucntion that changes text when we click on it
+function changeText() {
+  document.querySelector(".para").innerHTML = "changed using javascript";
+}
+
+ alert("hello"); gives an alert message
+
+console.log("first console log"); logs into console
+
+ window.print("first print");can be used to print data on the page or save the page
+
+javascript variables
+
+ var,let,const
+
+var->best used if the value of the variable is bound to change and it works fine on older browsers
+let->introduced newely and values of he variabl cannot be redeclared change may not work with older browsers
+const->used when varibles values are not supposed to change
+
+
+let cannot be redeclared once declared
+
+eg let x="varun";
+    let x=10;
+    syntax error
+
+but the same can be done with var keyword
+
+var x="varun";
+var x=10;
+no syntax error
+
+
+variable declared using let has block scope eg
+
+{
+    let a=10;//cannot be accessed outside the block
+}
+
+but the variables declared using var keyword can be accessed outside the block
+
+{
+    var a=10;//can be accessed outside the block
+}
+
+const keyword 
+
+variables declared with const keyword has to be assigned when they are declared 
+
+const x=10;//is fine
+const x=x+10;//causes an error
+
+const doesnot define a constant value but defines a reference to a constant value
+so we can change the ele of constant array
+change the properties of constant array
+
+fucntions in javascript
+
+fucntions are block of code that gets executed when when it gets invoked
+
+syntax: 
+function function_name(param1,param2){
+//body of the code
+}
+
+Function Return
+When JavaScript reaches a return statement, the function will stop executing.
+
+If the function was invoked from a statement, JavaScript will "return" to execute the code after the invoking statement.
+
+Functions often compute a return value. The return value is "returned" back to the "caller":
+
+eg
+ var x = multiplier(3, 4);
+
+ function multiplier(a, b) {
+   return a * b;
+}
+
+ alert(x);
+
+
+in javascript objects are like key value pairs
+
+var myObject={name:"varun",age:"19"};
+
+objects should be enclosed inside {} curly braces
+
+methods is a function stored as property
+
+javascript objects can have methods
+
+var myObject = {
+  fistName: "Varun",
+  lastName: "Sadananda",
+  fullName: function () {
+    return this.fistName + " " + this.lastName;
+  },
+};
+
+console.log(myObject.fullName());
+
+comparing javascript objects always returns false
+
+
+
+String methods and properties
+
+.length->used to get the length of the string
+
+let name = "varun";
+let nameLength = name.length;
+alert(nameLength);
+
+Extracting string parts
+
+1)slice(start,end)
+2)substring(start,end)
+3)substr(start,length)
+
+1)slice->used to extract part of the string and return extracted part in new string
+let x="varun is awesome"
+let y=x.slice(6,8);
+alert(y);
+here is output as end parameter is not included 
+
+we can also use negative values and things gets counted from backwards
+
+if we donot use any last parameter then rest of the string is sliced
+
+2)substring(start,end)->similar to slice but does not accept negative values
+
+3)substr(start,length)->similar to slice but second parameter specifies the length to be sliced
+
+
+replace 
+
+.replace method can be used to replace the string it replace only the first match if can find it
+
+to convert to uppercase and lowercase we can use 
+
+1)toUpperCase()
+2)toLowerCase()
+
+all string method returns new string strings are immutable in js
+
+.concat is used to concatenate two strings together we can also use + operator to concatenate two strings together
+
+search methods in javascript
+
+1)indexOf()->returns first occurance of index of the string
+
+2)lastIndexOf()->returns index of last occurance of the string
+
+if search is not successfull then we get -1 as output
+
+string template
+
+use `string goes here` instead of "not these open apostophis"
+
+with string literals we can use both "" and ''
+
+we can also replace values in strings using $
+
+// var first = "varun";
+// var second = "s";
+
+// var text = `welcome ${first} ${second} here `;
+// alert(text);
+
+
+Arrays in JavaScript
+
+arrays->special datatype that can store multiple values
+it is convention to name array variables as const
+can access arrays using indexes
+
+.push("element to be pushed")->pushes a value to end of the array
+
+Array methods
+
+.toString()->converts array into comma seperated values
+
+.join(value goes here)->works like toString but can specify what seperates array values
+
+.pop()->removes last element of the array
+
+.push()->adds an element to last of the array
+
+.shift()->removes fist element of the array
+
+.unshift()->adds elements to the first
+
+.splice(positon to add,no of ele to delete,elements to be added)->adds new element to an array
+
+.slice()->similar to slice in strings
+
+.sort()->sort array alphabetically
+
+.reverse()->reverse array elements
+
+Math.max.apply()->to get maximum element of the array
+
+Date()->returns date using browsers timezone
+
+Math.random()->returns 0(inclusive) to 1(exclusive)
+
+In JavaScript there are 5 different data types that can contain values:
+
+string
+number
+boolean
+object
+function
+There are 6 types of objects:
+
+Object
+Date
+Array
+String
+Number
+Boolean
+And 2 data types that cannot contain values:
+
+null
+undefined
+
+Regular expression 
+
+sequence of characters that forms search pattern
+
+syntax:/pattern/modifier
+
+eg:/varun/i
+
+varun is the pattern to be searched
+
+i is the modifier i here searches also for not casesenseitive
+
+.search()->searches for a match 
+
+.replace(to_be_replaced,to_be_replaced_with)->replaces a text with another text
+
+regular expression modifiers
+
+i->perform case-insensitive matching
+g->perform global match(doesnot stop after a key is found but goes on till all the matches are found)
+m->
+
+.test()->searches for a pattern in regular expression
+
+javascript error handling
+
+try->error in try block can be caught by catch
+
+catch->catch an error inside try block
+
+finally->runs regardless of result
+
+throw->to define custom error
+
+Arrow operator =>
+
+function syntax gets shorter using => operator
+
+function msg()
+{
+  return "hello";
+}
+
+
+function ()=>{
+  return "hello";
+}
+
+
+DOM->Document Object Model
+
+In DOM html elements are considered as objects
+
+.querySelector("select_element")->used to grab an element
+
+document.querySelector(".second-para").innerHTML = "helloo";
+
+element.innerHTML=""->change html content
+
+element.attribute=new value -> add new attribute
+
+element.style.property = new property -> change html styling
+
+document.createElement(element) -> create html element
+
+document.removeChild(element) -> removes child
+
+document.appendChild(element) -> add an html element
+
+document.replaceChild(new ,old) -> replace html element
+
+document.write() -> write directly into html
+
+changing styles using js
+
+document.getElementById(id).style.property = new style
+
+document.querySelector("para").style.color=red;
+
+Event listners can be added to react when particular events occurs
+
